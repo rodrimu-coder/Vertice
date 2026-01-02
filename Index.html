@@ -1,28 +1,19 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VÉRTICE Consultores | Gobierno, Estrategia y Control</title>
-  <meta name="description" content="VÉRTICE Consultores instala gobierno, control de gestión y ritmo de decisión para directorios, dueños y primeras líneas de pymes y empresas medianas." />
-  <meta name="theme-color" content="#0b1220" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="VÉRTICE Consultores" />
-  <meta property="og:description" content="Gobierno real del negocio. Estrategia, control y seguimiento para decisiones ejecutivas." />
-  <meta property="og:type" content="website" />
+  <meta name="description" content="VÉRTICE Consultores instala gobierno, control de gestión y ritmo de decisión para directorios, dueños y primeras líneas de pymes y empresas medianas.">
 
   <style>
     :root{
       --bg:#0b1220;
       --panel:#0f1a2e;
-      --card:#0e1830;
       --text:#e9edf7;
       --muted:#a9b2c7;
       --line:rgba(233,237,247,.12);
-      --brand:#d6b35b; /* acento cobre sobrio */
-      --brand2:#7dd3fc; /* acento frío sutil (solo detalles) */
-      --shadow: 0 16px 50px rgba(0,0,0,.35);
+      --brand:#d6b35b;
       --radius:16px;
       --max:1120px;
     }
@@ -30,401 +21,164 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 700px at 20% -10%, rgba(214,179,91,.14), transparent 55%),
-                  radial-gradient(900px 600px at 80% 0%, rgba(125,211,252,.10), transparent 60%),
-                  var(--bg);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg);
       color:var(--text);
       line-height:1.5;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .topbar{
-      position:sticky; top:0; z-index:1000;
-      backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.72);
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:10;
+      background:rgba(11,18,32,.92);
       border-bottom:1px solid var(--line);
+      backdrop-filter: blur(8px);
     }
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;gap:14px;
     }
     .brand{
-      display:flex; align-items:center; gap:12px; min-width:260px;
+      display:flex;align-items:center;gap:12px;
     }
-    .logo{
-      width:38px;height:38px;border-radius:12px;
-      background: linear-gradient(135deg, rgba(214,179,91,.95), rgba(214,179,91,.35));
-      box-shadow: 0 10px 30px rgba(214,179,91,.18);
+    .mark{
+      width:40px;height:40px;border-radius:12px;
+      background:linear-gradient(135deg, rgba(214,179,91,1), rgba(214,179,91,.45));
       display:grid;place-items:center;
       border:1px solid rgba(214,179,91,.35);
-      flex:0 0 auto;
     }
-    .logo svg{width:22px;height:22px}
-    .brand strong{letter-spacing:.12em; font-size:12px; text-transform:uppercase}
-    .brand span{display:block;color:var(--muted); font-size:12px; margin-top:2px}
-    .menu{
-      display:flex; gap:18px; align-items:center;
+    .mark span{font-weight:900;color:#101521;letter-spacing:.02em}
+    .brand .t1{
+      font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px;
     }
-    .menu a{
-      color:var(--muted);
-      font-size:13px;
-      padding:8px 10px;
-      border-radius:10px;
-      border:1px solid transparent;
+    .brand .t2{
+      display:block;color:var(--muted);font-size:12px;margin-top:2px;
     }
-    .menu a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.03)}
-    .actions{display:flex; gap:10px; align-items:center}
+    nav .links{display:flex;gap:14px;flex-wrap:wrap}
+    nav .links a{
+      color:var(--muted);font-size:13px;
+      padding:8px 10px;border-radius:10px;border:1px solid transparent;
+    }
+    nav .links a:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.03)}
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:12px;
-      font-weight:600;
-      font-size:13px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      cursor:pointer;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:12px;font-weight:700;font-size:13px;
+      border:1px solid var(--line);background:rgba(255,255,255,.03);
     }
-    .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(214,179,91,.35)}
+    .btn:hover{background:rgba(255,255,255,.06)}
     .btn.primary{
-      background: linear-gradient(135deg, rgba(214,179,91,.95), rgba(214,179,91,.55));
-      border-color: rgba(214,179,91,.55);
+      background:linear-gradient(135deg, rgba(214,179,91,1), rgba(214,179,91,.65));
+      border-color:rgba(214,179,91,.55);
       color:#101521;
-      box-shadow: 0 18px 50px rgba(214,179,91,.18);
-    }
-    .btn.primary:hover{background: linear-gradient(135deg, rgba(214,179,91,1), rgba(214,179,91,.65))}
-    .mobile-toggle{display:none}
-    .hero{
-      padding:64px 0 28px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:24px;
-      align-items:stretch;
-    }
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 12px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      color:var(--muted);
-      font-size:12px;
-      background: rgba(255,255,255,.02);
-    }
-    .kicker b{color:var(--brand); letter-spacing:.12em; text-transform:uppercase; font-size:11px}
-    h1{
-      margin:14px 0 10px;
-      font-size:46px;
-      line-height:1.05;
-      letter-spacing:-.02em;
-    }
-    .subtitle{
-      color:var(--muted);
-      font-size:16px;
-      max-width:56ch;
-      margin:0 0 18px;
-    }
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap}
-    .micro{
-      color:var(--muted);
-      font-size:12px;
-      margin-top:14px;
-      max-width:65ch;
-    }
-    .panel{
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:18px;
-      overflow:hidden;
-      position:relative;
-    }
-    .panel:before{
-      content:"";
-      position:absolute; inset:-2px -2px auto auto;
-      width:240px; height:240px;
-      background: radial-gradient(circle at 30% 30%, rgba(214,179,91,.20), transparent 60%);
-      filter: blur(2px);
-      transform: translate(40px,-60px);
-      pointer-events:none;
-    }
-    .panel h3{margin:0 0 10px; font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:rgba(233,237,247,.85)}
-    .panel .list{margin:0; padding:0 0 0 16px; color:var(--muted); font-size:13px}
-    .panel .list li{margin:8px 0}
-    .section{
-      padding:42px 0;
-      border-top:1px solid var(--line);
-    }
-    .section h2{
-      margin:0 0 10px;
-      font-size:26px;
-      letter-spacing:-.01em;
-    }
-    .section p.lead{
-      margin:0 0 18px;
-      color:var(--muted);
-      max-width:80ch;
-    }
-    .grid-3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .card{
-      background: rgba(255,255,255,.02);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      padding:18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
-    }
-    .card h4{margin:0 0 8px; font-size:15px}
-    .card p{margin:0; color:var(--muted); font-size:13px}
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      color:rgba(233,237,247,.88);
-      background: rgba(255,255,255,.02);
-      font-size:12px;
-      margin-bottom:10px;
-    }
-    .pill .dot{
-      width:8px;height:8px;border-radius:99px;background:var(--brand);
-      box-shadow: 0 0 0 4px rgba(214,179,91,.12);
-    }
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    .method{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-      margin-top:14px;
-    }
-    .step{
-      padding:14px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-    }
-    .step b{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:rgba(233,237,247,.90);
-    }
-    .step b i{
-      display:inline-grid; place-items:center;
-      width:22px;height:22px;border-radius:8px;
-      background: rgba(214,179,91,.16);
-      border:1px solid rgba(214,179,91,.25);
-      color:var(--brand);
-      font-style:normal;
-      font-weight:800;
-    }
-    .step p{margin:8px 0 0; color:var(--muted); font-size:13px}
-    .results{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top:14px;
-    }
-    .tag{
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      color:var(--muted);
-      font-size:12px;
-    }
-    .industry{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    .industry .card ul{
-      margin:10px 0 0;
-      padding:0 0 0 16px;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .industry .card li{margin:8px 0}
-    .about{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-      align-items:start;
-    }
-    .bio{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:14px;
-      background: rgba(255,255,255,.02);
-    }
-    .bio h4{margin:0 0 6px}
-    .bio p{margin:0;color:var(--muted);font-size:13px}
-    form{
-      display:grid;
-      gap:10px;
-      margin-top:10px;
-    }
-    label{font-size:12px;color:rgba(233,237,247,.85)}
-    input, select, textarea{
-      width:100%;
-      padding:11px 12px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      color:var(--text);
-      outline:none;
-    }
-    textarea{min-height:110px; resize:vertical}
-    input:focus, select:focus, textarea:focus{
-      border-color: rgba(214,179,91,.45);
-      box-shadow: 0 0 0 4px rgba(214,179,91,.10);
-    }
-    .form-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-    }
-    .footer{
-      padding:26px 0 40px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:12px;
-    }
-    .footer .row{
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      align-items:center;
-    }
-    .footlinks{display:flex; gap:12px; flex-wrap:wrap}
-    .footlinks a{color:var(--muted)}
-    .footlinks a:hover{color:var(--text)}
-    .note{
-      color:var(--muted);
-      font-size:12px;
-      margin-top:10px;
     }
 
-    /* Mobile */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr; }
-      h1{font-size:38px}
-      .grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .method{grid-template-columns:1fr}
-      .industry{grid-template-columns:1fr}
-      .about{grid-template-columns:1fr}
-      .menu{display:none}
-      .mobile-toggle{display:inline-flex}
-      .brand{min-width:auto}
+    /* Sections */
+    .hero{padding:58px 0 30px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+    h1{margin:0 0 10px;font-size:44px;line-height:1.08}
+    .sub{margin:0 0 18px;color:var(--muted);max-width:60ch}
+    .panel{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.02);
+      padding:16px;
     }
-    /* Mobile menu sheet */
-    .sheet{
-      display:none;
-      border-top:1px solid var(--line);
-      background: rgba(11,18,32,.90);
+    .panel h3{margin:0 0 10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+    .panel ul{margin:0;padding-left:18px;color:var(--muted);font-size:13px}
+    .panel li{margin:8px 0}
+
+    .section{padding:40px 0;border-top:1px solid var(--line)}
+    .section h2{margin:0 0 10px;font-size:26px}
+    .lead{margin:0 0 16px;color:var(--muted);max-width:80ch}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.02);
+      padding:16px;
     }
-    .sheet.open{display:block}
-    .sheet a{
-      display:block;
-      padding:12px 6px;
-      color:var(--muted);
-      border-bottom:1px solid rgba(233,237,247,.06);
+    .card h4{margin:0 0 8px;font-size:15px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .tag{border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:var(--muted);font-size:12px;background:rgba(255,255,255,.02)}
+
+    form{display:grid;gap:10px;margin-top:8px}
+    label{font-size:12px;color:rgba(233,237,247,.86)}
+    input,select,textarea{
+      width:100%;padding:11px 12px;border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);color:var(--text);
+      outline:none;
     }
-    .sheet a:hover{color:var(--text)}
+    textarea{min-height:110px;resize:vertical}
+    .fg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .note{color:var(--muted);font-size:12px;margin-top:10px}
+
+    footer{border-top:1px solid var(--line);padding:20px 0 34px;color:var(--muted);font-size:12px}
+
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      nav .links{display:none}
+      h1{font-size:36px}
+    }
   </style>
 </head>
 
 <body>
-  <!-- Topbar -->
-  <header class="topbar">
+  <header>
     <div class="wrap">
-      <nav class="nav" aria-label="Navegación principal">
-        <a class="brand" href="#inicio" aria-label="Ir al inicio">
-          <div class="logo" aria-hidden="true">
-            <!-- Logo simple (monograma V) -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M4.5 5.5L11.8 19L19.5 5.5" stroke="#101521" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M7.2 5.5L11.8 14.3L16.8 5.5" stroke="rgba(16,21,33,.55)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+      <div class="nav">
+        <a class="brand" href="#inicio" aria-label="Inicio">
+          <div class="mark" aria-hidden="true"><span>V</span></div>
           <div>
-            <strong>VÉRTICE Consultores</strong>
-            <span>Gobierno, Estrategia y Control</span>
+            <div class="t1">VÉRTICE Consultores</div>
+            <span class="t2">Gobierno, Estrategia y Control</span>
           </div>
         </a>
 
-        <div class="menu" role="navigation" aria-label="Secciones">
-          <a href="#que-hacemos">Qué hacemos</a>
+        <nav class="links" aria-label="Secciones">
+          <a href="#que">Qué hacemos</a>
           <a href="#servicios">Servicios</a>
           <a href="#metodo">Método</a>
           <a href="#industria">Industria</a>
           <a href="#nosotros">Nosotros</a>
           <a href="#contacto">Contacto</a>
-        </div>
+        </nav>
 
-        <div class="actions">
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn" href="#contacto">Solicitar diagnóstico</a>
           <a class="btn primary" href="#contacto">Agendar conversación</a>
-          <button class="btn mobile-toggle" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileSheet">
-            Menú
-          </button>
         </div>
-      </nav>
-
-      <!-- Mobile menu -->
-      <div class="sheet" id="mobileSheet" aria-label="Menú móvil">
-        <a href="#que-hacemos" class="m-link">Qué hacemos</a>
-        <a href="#servicios" class="m-link">Servicios</a>
-        <a href="#metodo" class="m-link">Método</a>
-        <a href="#industria" class="m-link">Industria</a>
-        <a href="#nosotros" class="m-link">Nosotros</a>
-        <a href="#contacto" class="m-link">Contacto</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
   <main id="inicio" class="hero">
     <div class="wrap">
       <div class="hero-grid">
-        <section aria-label="Presentación principal">
-          <div class="kicker"><b>VÉRTICE</b> <span>Consultoría para directorios y primeras líneas</span></div>
+        <section>
           <h1>Gobierno real del negocio.</h1>
-          <p class="subtitle">
+          <p class="sub">
             Estrategia, control y seguimiento para directorios, dueños y primeras líneas de pymes y empresas medianas.
             Instalamos sistemas de decisión y ritmo de gestión: información ejecutiva, acuerdos y trazabilidad.
           </p>
-
-          <div class="hero-actions">
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
             <a class="btn primary" href="#contacto">Agendar conversación</a>
-            <a class="btn" href="#que-hacemos">Ver qué hacemos</a>
+            <a class="btn" href="#que">Ver qué hacemos</a>
           </div>
-
-          <p class="micro">
-            Intervenimos donde se toman decisiones. No vendemos informes: instalamos control, agenda y seguimiento.
-          </p>
+          <p class="note">Intervenimos donde se toman decisiones. No vendemos informes: instalamos control, agenda y seguimiento.</p>
         </section>
 
-        <aside class="panel" aria-label="Señales típicas de necesidad">
+        <aside class="panel">
           <h3>Señales de alerta</h3>
-          <ul class="list">
+          <ul>
             <li>Reuniones con urgencias, sin acuerdos medibles.</li>
             <li>Indicadores dispersos o poco confiables.</li>
             <li>Presupuesto que no guía decisiones.</li>
@@ -436,362 +190,215 @@
     </div>
   </main>
 
-  <!-- Qué hacemos -->
-  <section id="que-hacemos" class="section">
+  <section id="que" class="section">
     <div class="wrap">
       <h2>Qué hacemos</h2>
       <p class="lead">
-        VÉRTICE instala gobierno, control de gestión y ritmo de decisión. Diseñamos un sistema simple y exigente:
-        pocos indicadores, reportes comparables, acuerdos trazables y seguimiento mensual.
+        VÉRTICE instala gobierno, control de gestión y ritmo de decisión. Un sistema simple y exigente: pocos indicadores,
+        reportes comparables, acuerdos trazables y seguimiento mensual.
       </p>
 
-      <div class="grid-3" role="list">
-        <div class="card" role="listitem">
-          <div class="pill"><span class="dot"></span> Estrategia</div>
-          <h4>Prioridades claras</h4>
-          <p>Definimos foco: objetivos concretos, iniciativas críticas y criterios de decisión. Menos dispersión, más dirección.</p>
+      <div class="grid3">
+        <div class="card">
+          <h4>Estrategia</h4>
+          <p>Definimos foco: objetivos, iniciativas críticas y criterios de decisión. Menos dispersión, más dirección.</p>
         </div>
-        <div class="card" role="listitem">
-          <div class="pill"><span class="dot"></span> Control de Gestión</div>
-          <h4>Indicadores accionables</h4>
-          <p>KPIs, metas, responsables y reglas de medición. Reportabilidad ejecutiva que permite comparar y decidir.</p>
+        <div class="card">
+          <h4>Control de Gestión</h4>
+          <p>KPIs, metas, responsables y reglas de medición. Reportabilidad ejecutiva para comparar y decidir.</p>
         </div>
-        <div class="card" role="listitem">
-          <div class="pill"><span class="dot"></span> Ritmo de Directorio</div>
-          <h4>Agenda y acuerdos</h4>
-          <p>Reuniones con estructura, reportes breves y seguimiento de acuerdos. La ejecución se vuelve trazable.</p>
+        <div class="card">
+          <h4>Ritmo de Directorio</h4>
+          <p>Agenda, reportes breves y seguimiento de acuerdos. La ejecución se vuelve trazable.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Servicios -->
   <section id="servicios" class="section">
     <div class="wrap">
       <h2>Servicios</h2>
-      <p class="lead">
-        Portafolio diseñado para elevar el estándar de información y decisión. Entregables concretos, sin complejidad innecesaria.
-      </p>
+      <p class="lead">Entregables concretos para elevar el estándar de información y decisión.</p>
 
-      <div class="grid-2">
+      <div class="grid2">
         <div class="card">
           <h4>Sistema de Gobierno & Directorio</h4>
           <p>Agenda mensual, reporte ejecutivo (1–3 páginas), tablero estratégico y acta de acuerdos con seguimiento.</p>
-          <div class="results" aria-label="Componentes">
-            <span class="tag">Agenda</span><span class="tag">Reporte ejecutivo</span><span class="tag">Tablero</span><span class="tag">Acuerdos</span>
+          <div class="tags">
+            <span class="tag">Agenda</span><span class="tag">Reporte</span><span class="tag">Tablero</span><span class="tag">Acuerdos</span>
           </div>
         </div>
+
         <div class="card">
           <h4>Control Presupuestario & Forecast</h4>
-          <p>Presupuesto anual, control mensual, escenarios y variaciones explicadas con acciones correctivas y responsables.</p>
-          <div class="results" aria-label="Componentes">
+          <p>Presupuesto anual, control mensual, escenarios y variaciones explicadas con acciones y responsables.</p>
+          <div class="tags">
             <span class="tag">Presupuesto</span><span class="tag">Forecast</span><span class="tag">Variaciones</span><span class="tag">Acciones</span>
           </div>
         </div>
+
         <div class="card">
           <h4>Tablero de Gestión (KPIs)</h4>
-          <p>Definición de KPIs estratégicos y operacionales, metas, cadencia, consistencia de datos y visualización ejecutiva.</p>
-          <div class="results" aria-label="Componentes">
+          <p>KPIs estratégicos y operacionales, metas, cadencia y visualización ejecutiva.</p>
+          <div class="tags">
             <span class="tag">KPIs</span><span class="tag">Metas</span><span class="tag">Semáforos</span><span class="tag">Dashboard</span>
           </div>
         </div>
+
         <div class="card">
           <h4>Ejecución y Seguimiento Ejecutivo</h4>
-          <p>Comité mensual, seguimiento de acuerdos, riesgos críticos y soporte a la decisión para sostener el control en el tiempo.</p>
-          <div class="results" aria-label="Componentes">
-            <span class="tag">Ritmo mensual</span><span class="tag">Riesgos</span><span class="tag">Seguimiento</span><span class="tag">Decisiones</span>
+          <p>Comité mensual, seguimiento de acuerdos, riesgos críticos y soporte a la decisión.</p>
+          <div class="tags">
+            <span class="tag">Ritmo</span><span class="tag">Riesgos</span><span class="tag">Seguimiento</span><span class="tag">Decisiones</span>
           </div>
         </div>
       </div>
 
-      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn" href="#metodo">Ver método VÉRTICE</a>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="#metodo">Ver método</a>
         <a class="btn primary" href="#contacto">Solicitar diagnóstico ejecutivo</a>
       </div>
     </div>
   </section>
 
-  <!-- Método -->
   <section id="metodo" class="section">
     <div class="wrap">
       <h2>Método VÉRTICE</h2>
-      <p class="lead">
-        No es consultoría teórica. Es instalación de sistema: información, foco, control y ritmo mensual con trazabilidad.
-      </p>
+      <p class="lead">Instalación de sistema: información, foco, control y ritmo mensual con trazabilidad.</p>
 
-      <div class="method" role="list">
-        <div class="step" role="listitem">
-          <b><i>1</i> Diagnóstico de Gobierno</b>
-          <p>Calidad de información, roles de decisión, frecuencia y foco de reuniones. Identificamos brechas de control.</p>
-        </div>
-        <div class="step" role="listitem">
-          <b><i>2</i> Arquitectura Estratégica</b>
-          <p>Prioridades reales (3–5), objetivos medibles y riesgos críticos. Se define el estándar de dirección.</p>
-        </div>
-        <div class="step" role="listitem">
-          <b><i>3</i> Sistema de Control</b>
-          <p>KPIs, metas, semáforos y reglas de medición. Reportes comparables para decidir sin ruido.</p>
-        </div>
-        <div class="step" role="listitem">
-          <b><i>4</i> Ritmo de Gestión</b>
-          <p>Agenda mensual, acuerdos, responsables y seguimiento. La ejecución se vuelve visible y gobernable.</p>
-        </div>
-        <div class="step" role="listitem">
-          <b><i>5</i> Soporte a la Decisión</b>
-          <p>Interpretación ejecutiva: recomendaciones, alertas y acciones. Menos discusión, más decisión.</p>
-        </div>
-        <div class="step" role="listitem">
-          <b><i>+</i> Acompañamiento</b>
-          <p>Instalación y transferencia: el sistema queda operando sin depender de “personas clave”.</p>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top:14px;">
-        <h4>Resultados que perseguimos</h4>
-        <div class="results">
-          <span class="tag">Visibilidad mensual</span>
-          <span class="tag">Disciplina de agenda</span>
-          <span class="tag">Decisiones comparables</span>
-          <span class="tag">Control presupuestario real</span>
-          <span class="tag">Responsables claros</span>
-          <span class="tag">Ejecución trazable</span>
-        </div>
+      <div class="grid2">
+        <div class="card"><h4>1) Diagnóstico de Gobierno</h4><p>Información, roles de decisión, frecuencia y foco. Identificamos brechas de control.</p></div>
+        <div class="card"><h4>2) Arquitectura Estratégica</h4><p>Prioridades reales (3–5), objetivos medibles y riesgos críticos.</p></div>
+        <div class="card"><h4>3) Sistema de Control</h4><p>KPIs, metas, semáforos y reglas de medición. Reportes comparables.</p></div>
+        <div class="card"><h4>4) Ritmo de Gestión</h4><p>Agenda, acuerdos, responsables y seguimiento. La ejecución se vuelve visible.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Industria -->
   <section id="industria" class="section">
     <div class="wrap">
       <h2>Enfoque por industria</h2>
-      <p class="lead">
-        Ajustamos el sistema a los drivers de cada operación, manteniendo el estándar ejecutivo: pocos indicadores, pero correctos.
-      </p>
+      <p class="lead">Ajustamos el sistema a los drivers de cada operación manteniendo estándar ejecutivo.</p>
 
-      <div class="industry">
+      <div class="grid2">
         <div class="card">
           <h4>Servicios</h4>
-          <p>Gobierno sobre productividad, margen, dotación y cumplimiento.</p>
-          <ul>
-            <li>Productividad por equipo / rol crítico</li>
-            <li>Margen y contribución por línea</li>
-            <li>Calidad y cumplimiento (SLA)</li>
-            <li>Capacidad, backlog y tiempos de respuesta</li>
-          </ul>
+          <p>Productividad, margen, dotación, cumplimiento y capacidad.</p>
         </div>
         <div class="card">
           <h4>Logística</h4>
-          <p>Control sobre costo-servicio, capacidad y disciplina operativa.</p>
-          <ul>
-            <li>Nivel de servicio (OTIF / cumplimiento)</li>
-            <li>Productividad operativa</li>
-            <li>Costos por ruta / cliente / centro</li>
-            <li>Rotación, mermas y utilización de capacidad</li>
-          </ul>
+          <p>Nivel de servicio, costos por ruta/cliente, productividad operativa y capacidad.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Nosotros -->
   <section id="nosotros" class="section">
     <div class="wrap">
       <h2>Nosotros</h2>
       <p class="lead">
-        VÉRTICE reúne experiencia en control de gestión, finanzas, estrategia y dirección de personas.
-        Nuestro trabajo se mide en decisiones, acuerdos y disciplina de seguimiento.
+        Experiencia en control de gestión, finanzas, estrategia y dirección de personas. Nuestro trabajo se mide en decisiones,
+        acuerdos y disciplina de seguimiento.
       </p>
 
-      <div class="about">
+      <div class="grid2">
         <div class="card">
           <h4>Qué nos distingue</h4>
-          <p>
-            Operamos con estándar de directorio: claridad, síntesis y trazabilidad. Instalamos un sistema que queda funcionando,
-            con reportes breves y comparables, ritmo mensual y responsables definidos.
-          </p>
-          <div class="note">
-            *Aquí puedes agregar casos/experiencia sin revelar clientes: “retail”, “servicios”, “logística”, etc.*
-          </div>
+          <p>Estándar de directorio: claridad, síntesis y trazabilidad. El sistema queda operando sin depender de “personas clave”.</p>
         </div>
-
         <div class="card">
           <h4>Equipo</h4>
-          <div class="bio" style="margin-top:10px;">
-            <h4>Socio 1</h4>
-            <p>Control de gestión y dirección de personas. Implementación de ritmo de gestión y KPIs ejecutivos.</p>
-          </div>
-          <div class="bio" style="margin-top:10px;">
-            <h4>Socio 2</h4>
-            <p>Finanzas, control de gestión y planificación. Modelos de presupuesto, forecast y escenarios.</p>
-          </div>
-          <div class="note">
-            *Reemplaza “Socio 1/2” por nombres y 2–3 credenciales (magíster, años, foco).*
-          </div>
+          <p style="color:var(--muted);font-size:13px;margin:0">
+            Socio 1: Control de gestión + Personas (bio corto).<br>
+            Socio 2: Finanzas + Planificación (bio corto).
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contacto -->
   <section id="contacto" class="section">
     <div class="wrap">
       <h2>Contacto</h2>
-      <p class="lead">
-        Agenda una conversación ejecutiva. Cuéntanos el tamaño de tu empresa, industria y el principal dolor de control/decisión.
-        Responderemos con un diagnóstico inicial y un abordaje posible.
-      </p>
+      <p class="lead">Agenda una conversación ejecutiva. Responderemos con un diagnóstico inicial y un abordaje posible.</p>
 
-      <div class="grid-2">
+      <div class="grid2">
         <div class="card">
           <h4>Solicitar diagnóstico</h4>
-
-          <!--
-            FORMULARIO:
-            - Si no tienes backend, puedes:
-              A) usar "mailto:" (simple pero menos pro),
-              B) conectar a Formspree / Getform / Netlify Forms,
-              C) conectar a tu CRM (Zoho, HubSpot, etc).
-            - Abajo dejo un ejemplo con mailto (cámbialo si quieres algo más profesional).
-          -->
           <form id="contactForm">
-            <div class="form-grid">
+            <div class="fg">
               <div>
                 <label for="nombre">Nombre</label>
-                <input id="nombre" name="nombre" type="text" placeholder="Nombre y apellido" required />
+                <input id="nombre" name="nombre" required>
               </div>
               <div>
                 <label for="cargo">Cargo</label>
-                <input id="cargo" name="cargo" type="text" placeholder="Cargo" required />
+                <input id="cargo" name="cargo" required>
               </div>
             </div>
 
-            <div class="form-grid">
+            <div class="fg">
               <div>
                 <label for="empresa">Empresa</label>
-                <input id="empresa" name="empresa" type="text" placeholder="Nombre empresa" required />
-              </div>
-              <div>
-                <label for="tamano">Tamaño</label>
-                <select id="tamano" name="tamano" required>
-                  <option value="" disabled selected>Selecciona</option>
-                  <option>1–20 personas</option>
-                  <option>21–80 personas</option>
-                  <option>81–200 personas</option>
-                  <option>200+ personas</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-grid">
-              <div>
-                <label for="industria">Industria</label>
-                <select id="industriaSel" name="industria" required>
-                  <option value="" disabled selected>Selecciona</option>
-                  <option>Servicios</option>
-                  <option>Logística</option>
-                  <option>Retail</option>
-                  <option>Manufactura</option>
-                  <option>Salud</option>
-                  <option>Otra</option>
-                </select>
+                <input id="empresa" name="empresa" required>
               </div>
               <div>
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="tu@empresa.cl" required />
+                <input id="email" name="email" type="email" required>
               </div>
             </div>
 
             <div>
               <label for="dolor">Dolor principal</label>
-              <textarea id="dolor" name="dolor" placeholder="Ej: Reuniones sin acuerdos, KPIs dispersos, presupuesto sin control, etc." required></textarea>
+              <textarea id="dolor" name="dolor" required></textarea>
             </div>
 
             <button class="btn primary" type="submit">Enviar solicitud</button>
-            <div class="note" id="formNote">
-              *Este formulario abre tu correo (modo simple). Si quieres, te lo dejo conectado a Formspree/Zoho con envío real.*
-            </div>
+            <div class="note">Este envío abre tu correo (modo simple). Si quieres, lo conectamos a Formspree/Zoho para envío real.</div>
           </form>
         </div>
 
         <div class="card">
           <h4>Canales</h4>
-          <p style="color:var(--muted); font-size:13px; margin-top:6px;">
-            Puedes dejarlos como placeholders por ahora y completarlos cuando tengas dominio/correo corporativo.
+          <p class="lead" style="margin-bottom:0">
+            Email: <a href="mailto:contacto@verticeconsultores.cl">contacto@verticeconsultores.cl</a><br>
+            Teléfono: <a href="tel:+56900000000">+56 9 0000 0000</a><br>
+            Ubicación: Santiago, Chile
           </p>
-
-          <div style="margin-top:14px; display:grid; gap:10px;">
-            <div class="bio">
-              <h4>Email</h4>
-              <p><a href="mailto:contacto@verticeconsultores.cl">contacto@verticeconsultores.cl</a></p>
-            </div>
-            <div class="bio">
-              <h4>Teléfono</h4>
-              <p><a href="tel:+56900000000">+56 9 0000 0000</a></p>
-            </div>
-            <div class="bio">
-              <h4>Ubicación</h4>
-              <p>Santiago, Chile</p>
-            </div>
-          </div>
-
-          <div style="margin-top:14px;">
-            <a class="btn" href="#inicio">Volver arriba</a>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer>
     <div class="wrap">
-      <div class="row">
-        <div>© <span id="year"></span> VÉRTICE Consultores. Todos los derechos reservados.</div>
-        <div class="footlinks">
-          <a href="#que-hacemos">Qué hacemos</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#contacto">Contacto</a>
-        </div>
-      </div>
+      © <span id="year"></span> VÉRTICE Consultores. Todos los derechos reservados.
     </div>
   </footer>
 
   <script>
-    // Año footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Menú móvil
-    const btn = document.getElementById("menuBtn");
-    const sheet = document.getElementById("mobileSheet");
-    if(btn){
-      btn.addEventListener("click", () => {
-        const open = sheet.classList.toggle("open");
-        btn.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-    }
-    document.querySelectorAll(".m-link").forEach(a=>{
-      a.addEventListener("click", ()=> sheet.classList.remove("open"));
-    });
-
-    // Formulario simple: abre mailto con los campos
-    const form = document.getElementById("contactForm");
-    form.addEventListener("submit", function(e){
+    // Formulario simple (mailto)
+    document.getElementById("contactForm").addEventListener("submit", function(e){
       e.preventDefault();
-      const data = new FormData(form);
+      const nombre = document.getElementById("nombre").value;
+      const cargo = document.getElementById("cargo").value;
+      const empresa = document.getElementById("empresa").value;
+      const email = document.getElementById("email").value;
+      const dolor = document.getElementById("dolor").value;
 
-      const to = "contacto@verticeconsultores.cl"; // cámbialo cuando tengas el real
+      const to = "contacto@verticeconsultores.cl";
       const subject = encodeURIComponent("Solicitud de diagnóstico | VÉRTICE Consultores");
       const body = encodeURIComponent(
-        `Nombre: ${data.get("nombre")}\n` +
-        `Cargo: ${data.get("cargo")}\n` +
-        `Empresa: ${data.get("empresa")}\n` +
-        `Tamaño: ${data.get("tamano")}\n` +
-        `Industria: ${data.get("industria")}\n` +
-        `Email: ${data.get("email")}\n\n` +
-        `Dolor principal:\n${data.get("dolor")}\n`
+        "Nombre: " + nombre + "\n" +
+        "Cargo: " + cargo + "\n" +
+        "Empresa: " + empresa + "\n" +
+        "Email: " + email + "\n\n" +
+        "Dolor principal:\n" + dolor + "\n"
       );
 
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      window.location.href = "mailto:" + to + "?subject=" + subject + "&body=" + body;
     });
   </script>
 </body>
